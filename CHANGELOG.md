@@ -1,3 +1,13 @@
+## [1.0.0-alpha.8] - 2025-10-15
+
+### 📚 Documentation
+
+- *(readme)* Update CI badge link
+
+### ⚙️ Miscellaneous Tasks
+
+- *(gitignore)* Add `error.log` to ignored files
+- *(lint-staged)* Adjust filtering for Biome formatting
 ## [1.0.0-alpha.7] - 2025-10-15
 
 ### 📚 Documentation
