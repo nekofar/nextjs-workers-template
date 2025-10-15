@@ -4,6 +4,8 @@ Repository Guidelines
 ## Project Structure & Module Organization
 - Application code lives under `src`, with Next.js routes in `src/app`, shared UI primitives in `src/components/ui`, and helpers in `src/lib`.
 - Place co-located tests near their subjects or in `tests/`; keep fixtures small and deterministic.
+  When adding unit coverage in `tests/unit`, mirror the `src` directory structure (reference the existing examples)
+  and import sources using the `@/` alias to match runtime resolution.
 - Static assets and headers rules belong in `public`; configuration stays at the repo root (`next.config.ts`, `open-next.config.ts`, `wrangler.jsonc`, Tailwind/Biome configs).
 
 ## Build, Test, and Development Commands
@@ -33,17 +35,25 @@ Repository Guidelines
 
 - Unit tests use `*.test.ts` (or `*.test.tsx`) naming and run with Vitest + React Testing Library; place them colocated
   with source files under `src/` or in `/tests/unit/`.
-- E2E tests live under `/tests/e2e/**/*.spec.ts` and run with Playwright.
+  When using `/tests/unit/`, mirror the `src` tree and import targets with the `@/` alias.
+- E2E tests live under `/tests/e2e/**/*.spec.ts` and run with Playwright. Keep E2E specs within `/tests/e2e/`.
+- Before implementing a feature or fix, write (or update) a failing test that captures the desired behavior, make the test pass with the minimal code change, and then refactor for clarity and maintainability.
+- Bug fixes must include regression tests that prove the defect and prevent future regressions.
 - Use clear, behavior-focused descriptions (e.g., `should return 200 on valid request`) and organize suites with
   `describe`/`it` blocks following the Arrange–Act–Assert pattern.
 - Keep comments minimal and only when they clarify non-obvious logic.
 - Centralize reusable mocks/fixtures and ensure each test resets shared state between runs.
 - Run unit tests with `pnpm test` and E2E tests with `pnpm test:e2e`; ensure new test scripts integrate with
   `pnpm lint`.
+- `pnpm test` must pass with the configured coverage thresholds (≥60% lines/statements/functions, ≥50% branches);
+  address any regression immediately.
+- Before opening a PR, run the coverage-enforced `pnpm test` suite (and `pnpm test:watch` locally when rapid feedback is
+  needed without gating on coverage).
 
 ## Commit & Pull Request Guidelines
 - Use Conventional Commits (`feat`, `fix`, `chore`, `docs`, `style`, `test`): e.g., `feat(api): add worker handler`.
 - Limit commits to related changes; prefer focused PRs.
+- Break work into small, purpose-driven commits. Keep tests, implementation, and refactors in distinct but related commits when possible (e.g., `feat(api): add handler` followed by `test(api): cover new handler`). Avoid batching unrelated changes into a single commit.
 - PRs should include a concise summary, verification steps (commands run, screenshots for UI changes), linked issues, and call out deployment or env updates.
 
 ## Security & Deployment Notes
