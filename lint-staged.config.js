@@ -1,5 +1,5 @@
 module.exports = {
-  "*.{js,jsx,ts,tsx,json,css,md}": (files) => {
+  "*.{js,jsx,ts,tsx,json,css}": (files) => {
     const filtered = files.filter((f) => !f.startsWith("src/components/ui/"));
     if (filtered.length === 0) {
       return ["echo 'No files to format with Biome'"];
