@@ -1,43 +1,37 @@
-# Repository Guidelines
+Repository Guidelines
+=====================
 
 ## Project Structure & Module Organization
-
-Application code lives under `src`, with routed pages in `src/app`, reusable UI primitives in `src/components/ui`, and
-shared helpers in `src/lib`. Static assets and headers rules stay in `public`. Build and deployment configuration is
-centralized in root files such as `next.config.ts`, `open-next.config.ts`, and `wrangler.jsonc`, while TypeScript,
-Biome, and Tailwind settings sit alongside them for quick reference.
+- Application code lives under `src`, with Next.js routes in `src/app`, shared UI primitives in `src/components/ui`, and helpers in `src/lib`.
+- Place co-located tests near their subjects or in `tests/`; keep fixtures small and deterministic.
+- Static assets and headers rules belong in `public`; configuration stays at the repo root (`next.config.ts`, `open-next.config.ts`, `wrangler.jsonc`, Tailwind/Biome configs).
 
 ## Build, Test, and Development Commands
-
-Install dependencies with `pnpm install` to honor the pinned workspace setup. Use `pnpm dev` for the Turbopack
-development server, `pnpm build` to produce a production bundle, and `pnpm start` to serve the compiled output. Run
-`pnpm preview` to emulate the Cloudflare deployment locally, and prefer `pnpm deploy` or `pnpm upload` for staging and
-production pushes. Keep the codebase healthy with `pnpm lint`, `pnpm format`, and regenerate Worker bindings via
-`pnpm cf-typegen`.
+- `pnpm install`: install workspace-pinned dependencies.
+- `pnpm dev`: run the Turbopack development server.
+- `pnpm build`: produce the production bundle for Workers.
+- `pnpm start`: serve the compiled output locally.
+- `pnpm preview`: emulate the Cloudflare deployment.
+- `pnpm deploy` / `pnpm upload`: push to staging or production; confirm environment bindings first.
+- `pnpm lint`, `pnpm format`: enforce Biome rules and auto-fix where possible.
 
 ## Coding Style & Naming Conventions
-
-The project targets Node 22 and modern Next.js with TypeScript. Follow Biome defaults (two-space indentation, single
-quotes in TS/JS) and let tailored lint fixes guide adjustments. Keep React components and files in PascalCase (
-`Button.tsx`), hook-like utilities in camelCase, and CSS modules or global styles in kebab-case. Tailwind utilities may
-be composed via `clsx` or `tailwind-merge`; favor semantic component variants over raw class strings when possible.
+- Target Node 22 and modern Next.js with TypeScript.
+- Follow Biome defaults: two-space indentation, single quotes in TS/JS, trailing commas where valid.
+- Components/Hooks: PascalCase files (`MyComponent.tsx`), hooks camelCase (`useThing.ts`); styles in kebab-case when using CSS modules.
+- Favor semantic Tailwind variants via `clsx` or `tailwind-merge` instead of raw utility strings.
 
 ## Testing Guidelines
-
-No dedicated test runner ships today, so add coverage thoughtfully as you extend the template. Co-locate component tests
-near their sources or under a `src/__tests__` folder, and select tooling (e.g., Vitest with React Testing Library) that
-runs cleanly inside the Cloudflare Workers target. Ensure new tests integrate with `pnpm lint` and document any setup
-changes in this guide.
+- No bundled runner yet—introduce tests with Vitest + React Testing Library or similar that run in the Workers context.
+- Name test files `*.test.ts(x)` and colocate next to the component or in `src/__tests__`.
+- Ensure new test scripts integrate with `pnpm lint`; document additional setup in this file if added.
 
 ## Commit & Pull Request Guidelines
-
-Commits follow Conventional Commit syntax (`type(scope): summary`) to support the git-cliff release pipeline. Reach for
-`feat`, `fix`, `chore`, `docs`, `style`, or `test` and keep bodies concise. When opening a pull request, supply a clear
-summary, list verification steps (commands, screenshots for UI tweaks), link related issues, and flag any deployment or
-environment changes. Avoid bundling unrelated work; small, focused PRs review faster.
+- Use Conventional Commits (`feat`, `fix`, `chore`, `docs`, `style`, `test`): e.g., `feat(api): add worker handler`.
+- Limit commits to related changes; prefer focused PRs.
+- PRs should include a concise summary, verification steps (commands run, screenshots for UI changes), linked issues, and call out deployment or env updates.
 
 ## Security & Deployment Notes
-
-Cloudflare environment bindings are defined in `cloudflare-env.d.ts`; never commit actual secrets or API keys. Update
-`wrangler.jsonc` when new bindings or routes are required, and validate changes with `pnpm preview` before promoting
-them. For external dependencies, rely on `pnpm up --interactive` to review upgrades and run lint checks afterward.
+- Define Cloudflare bindings in `cloudflare-env.d.ts`; never commit live secrets.
+- Update `wrangler.jsonc` when adding bindings or routes and validate with `pnpm preview`.
+- Review dependency upgrades via `pnpm up --interactive` followed by `pnpm lint`.
