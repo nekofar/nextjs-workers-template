@@ -13,5 +13,15 @@ export default defineConfig({
       "src/**/*.test.ts",
       "src/**/*.test.tsx",
     ],
+    coverage: {
+      provider: "v8",
+      reports: ["text", "lcov"],
+      thresholds: {
+        lines: 60,
+        branches: 50,
+        statements: 60,
+        functions: 60,
+      },
+    },
   },
 });
