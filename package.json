@@ -12,7 +12,8 @@
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --include-runtime=false --strict-vars=false --env-interface CloudflareEnv ./cloudflare-env.d.ts",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "vitest --run"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.10.1",
