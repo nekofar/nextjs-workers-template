@@ -1,9 +1,9 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures/home";
 
 test.describe("Meta & document basics", () => {
-  test.beforeEach(async ({ page }) => page.goto("/"));
+  test("should set html lang to en", async ({ page, gotoHome }) => {
+    await gotoHome();
 
-  test("should set html lang to en", async ({ page }) => {
     const lang = await page.evaluate(() => document.documentElement.lang);
     expect(lang).toBe("en");
   });

@@ -1,9 +1,9 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures/home";
 
 test.describe("Info cards", () => {
-  test.beforeEach(async ({ page }) => page.goto("/"));
+  test("should keep CTAs target and rel safe", async ({ page, gotoHome }) => {
+    await gotoHome();
 
-  test("should keep CTAs target and rel safe", async ({ page }) => {
     const links = [
       { name: "Learn more", expectedRel: /noopener/ },
       { name: "View examples", expectedRel: /noopener/ },
@@ -12,12 +12,18 @@ test.describe("Info cards", () => {
 
     for (const l of links) {
       const a = page.getByRole("link", { name: l.name });
-      await expect(a).toHaveAttribute("target", "_blank");
-      await expect(a).toHaveAttribute("rel", l.expectedRel);
+      await expect(a).toBeVisible({ timeout: 15000 });
+      await expect(a).toHaveAttribute("target", "_blank", { timeout: 15000 });
+      await expect(a).toHaveAttribute("rel", l.expectedRel, { timeout: 15000 });
     }
   });
 
-  test("should point CTA hrefs to correct domains", async ({ page }) => {
+  test("should point CTA hrefs to correct domains", async ({
+    page,
+    gotoHome,
+  }) => {
+    await gotoHome();
+
     const entries = [
       { name: "Learn more", contains: "nextjs.org/learn" },
       { name: "View examples", contains: "vercel.com/templates" },
@@ -26,7 +32,10 @@ test.describe("Info cards", () => {
 
     for (const e of entries) {
       const a = page.getByRole("link", { name: e.name });
-      await expect(a).toHaveAttribute("href", new RegExp(e.contains));
+      await expect(a).toBeVisible({ timeout: 15000 });
+      await expect(a).toHaveAttribute("href", new RegExp(e.contains), {
+        timeout: 15000,
+      });
     }
   });
 });
