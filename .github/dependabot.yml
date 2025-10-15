@@ -49,6 +49,12 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+    # Group react packages together
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
     # Allow up to 10 open pull requests for dependencies
     open-pull-requests-limit: 20
     # Raise pull requests against the `develop` branch
@@ -58,3 +64,4 @@ updates:
       - dependency-name: "*"
         update-types:
           - "version-update:semver-major"
+      - dependency-name: "wrangler"
