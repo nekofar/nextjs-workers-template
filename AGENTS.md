@@ -44,6 +44,7 @@ Repository Guidelines
 ## Commit & Pull Request Guidelines
 - Use Conventional Commits (`feat`, `fix`, `chore`, `docs`, `style`, `test`): e.g., `feat(api): add worker handler`.
 - Limit commits to related changes; prefer focused PRs.
+- Break work into small, purpose-driven commits. Keep tests, implementation, and refactors in distinct but related commits when possible (e.g., `feat(api): add handler` followed by `test(api): cover new handler`). Avoid batching unrelated changes into a single commit.
 - PRs should include a concise summary, verification steps (commands run, screenshots for UI changes), linked issues, and call out deployment or env updates.
 
 ## Security & Deployment Notes
