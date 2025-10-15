@@ -30,9 +30,16 @@ Repository Guidelines
 - Favor semantic Tailwind variants via `clsx` or `tailwind-merge` instead of raw utility strings.
 
 ## Testing Guidelines
-- No bundled runner yet—introduce tests with Vitest + React Testing Library or similar that run in the Workers context.
-- Name test files `*.test.ts(x)`; colocate them next to the source or place them in a root-level `tests` directory.
-- Ensure new test scripts integrate with `pnpm lint`; document additional setup in this file if added.
+
+- Unit tests use `*.test.ts` (or `*.test.tsx`) naming and run with Vitest + React Testing Library; place them colocated
+  with source files under `src/` or in `/tests/unit/`.
+- E2E tests live under `/tests/e2e/**/*.spec.ts` and run with Playwright.
+- Use clear, behavior-focused descriptions (e.g., `should return 200 on valid request`) and organize suites with
+  `describe`/`it` blocks following the Arrange–Act–Assert pattern.
+- Keep comments minimal and only when they clarify non-obvious logic.
+- Centralize reusable mocks/fixtures and ensure each test resets shared state between runs.
+- Run unit tests with `pnpm test` and E2E tests with `pnpm test:e2e`; ensure new test scripts integrate with
+  `pnpm lint`.
 
 ## Commit & Pull Request Guidelines
 - Use Conventional Commits (`feat`, `fix`, `chore`, `docs`, `style`, `test`): e.g., `feat(api): add worker handler`.

@@ -84,7 +84,9 @@ export default function Home() {
           <Card>
             <CardHeader>
               <FileText className="mb-2 h-4 w-4" />
-              <CardTitle className="text-base">Learn</CardTitle>
+              <CardTitle role="heading" aria-level={3} className="text-base">
+                Learn
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription>
@@ -107,7 +109,9 @@ export default function Home() {
           <Card>
             <CardHeader>
               <Grid3x3 className="mb-2 h-4 w-4" />
-              <CardTitle className="text-base">Examples</CardTitle>
+              <CardTitle role="heading" aria-level={3} className="text-base">
+                Examples
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription>
@@ -130,7 +134,9 @@ export default function Home() {
           <Card>
             <CardHeader>
               <Globe className="mb-2 h-4 w-4" />
-              <CardTitle className="text-base">Next.js</CardTitle>
+              <CardTitle role="heading" aria-level={3} className="text-base">
+                Next.js
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription>
