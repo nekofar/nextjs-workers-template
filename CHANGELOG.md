@@ -1,3 +1,8 @@
+## [1.0.0-alpha.5] - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- *(github)* Update release workflow step structure
 ## [1.0.0-alpha.4] - 2025-10-15
 
 ### ⚙️ Miscellaneous Tasks
