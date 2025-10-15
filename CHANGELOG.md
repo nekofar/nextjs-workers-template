@@ -1,3 +1,10 @@
+## [1.0.0-alpha.1] - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- *(config)* Update project name in `wrangler.jsonc`
+- *(config)* Specify package manager as `pnpm`
+- *(config)* Add `engines` field for Node.js support
 ## [1.0.0-alpha.0] - 2025-10-15
 
 ### 📚 Documentation
