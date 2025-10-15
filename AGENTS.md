@@ -40,6 +40,10 @@ Repository Guidelines
 - Centralize reusable mocks/fixtures and ensure each test resets shared state between runs.
 - Run unit tests with `pnpm test` and E2E tests with `pnpm test:e2e`; ensure new test scripts integrate with
   `pnpm lint`.
+- `pnpm test` must pass with the configured coverage thresholds (≥60% lines/statements/functions, ≥50% branches);
+  address any regression immediately.
+- Before opening a PR, run the coverage-enforced `pnpm test` suite (and `pnpm test:watch` locally when rapid feedback is
+  needed without gating on coverage).
 
 ## Commit & Pull Request Guidelines
 - Use Conventional Commits (`feat`, `fix`, `chore`, `docs`, `style`, `test`): e.g., `feat(api): add worker handler`.
