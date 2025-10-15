@@ -13,7 +13,10 @@
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --include-runtime=false --strict-vars=false --env-interface CloudflareEnv ./cloudflare-env.d.ts",
     "prepare": "husky",
-    "test": "vitest --run --passWithNoTests"
+    "test": "vitest --run --passWithNoTests",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.10.1",
