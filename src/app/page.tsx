@@ -1,4 +1,6 @@
+import { FileText, Globe, Grid3x3 } from "lucide-react";
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,8 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { FileText, Grid3x3, Globe } from "lucide-react";
 
 export default function Home() {
   return (
