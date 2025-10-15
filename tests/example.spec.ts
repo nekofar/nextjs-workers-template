@@ -1,25 +1,24 @@
 import { expect, test } from "@playwright/test";
 
-test.skip(
-  true,
-  "Skipping external Playwright website checks to avoid network dependency in CI",
-);
+// Skipping external Playwright website checks to avoid network dependency in CI.
+test.describe.skip("Playwright docs smoke tests", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("https://playwright.dev/");
+  });
 
-test("has title", async ({ page }) => {
-  await page.goto("https://playwright.dev/");
+  test("should display the docs title", async ({ page }) => {
+    await expect(page).toHaveTitle(/Playwright/);
+  });
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+  test("should show the Installation heading after opening Get started", async ({
+    page,
+  }) => {
+    await test.step("Open the Get started guide", async () => {
+      await page.getByRole("link", { name: "Get started" }).click();
+    });
 
-test("get started link", async ({ page }) => {
-  await page.goto("https://playwright.dev/");
-
-  // Click the get started link.
-  await page.getByRole("link", { name: "Get started" }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(
-    page.getByRole("heading", { name: "Installation" }),
-  ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Installation" }),
+    ).toBeVisible();
+  });
 });
