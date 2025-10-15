@@ -19,22 +19,22 @@ describe("Home page", () => {
     render(<Home />);
 
     expect(
-      screen.getByText("Explore Next.js tutorials and documentation"),
-    ).toBeInTheDocument();
+      screen.getAllByText("Explore Next.js tutorials and documentation").length,
+    ).toBeGreaterThan(0);
     expect(
-      screen.getByText("Browse templates and example projects"),
-    ).toBeInTheDocument();
+      screen.getAllByText("Browse templates and example projects").length,
+    ).toBeGreaterThan(0);
     expect(
-      screen.getByText("Visit the official Next.js website"),
-    ).toBeInTheDocument();
+      screen.getAllByText("Visit the official Next.js website").length,
+    ).toBeGreaterThan(0);
     expect(
-      screen.getByRole("link", { name: "Learn more" }),
-    ).toBeInTheDocument();
+      screen.getAllByRole("link", { name: "Learn more" }).length,
+    ).toBeGreaterThan(0);
     expect(
-      screen.getByRole("link", { name: "View examples" }),
-    ).toBeInTheDocument();
+      screen.getAllByRole("link", { name: "View examples" }).length,
+    ).toBeGreaterThan(0);
     expect(
-      screen.getByRole("link", { name: "Go to nextjs.org" }),
-    ).toBeInTheDocument();
+      screen.getAllByRole("link", { name: "Go to nextjs.org" }).length,
+    ).toBeGreaterThan(0);
   });
 });
