@@ -4,6 +4,8 @@ Repository Guidelines
 ## Project Structure & Module Organization
 - Application code lives under `src`, with Next.js routes in `src/app`, shared UI primitives in `src/components/ui`, and helpers in `src/lib`.
 - Place co-located tests near their subjects or in `tests/`; keep fixtures small and deterministic.
+  When adding unit coverage in `tests/unit`, mirror the `src` directory structure (reference the existing examples)
+  and import sources using the `@/` alias to match runtime resolution.
 - Static assets and headers rules belong in `public`; configuration stays at the repo root (`next.config.ts`, `open-next.config.ts`, `wrangler.jsonc`, Tailwind/Biome configs).
 
 ## Build, Test, and Development Commands
@@ -33,7 +35,8 @@ Repository Guidelines
 
 - Unit tests use `*.test.ts` (or `*.test.tsx`) naming and run with Vitest + React Testing Library; place them colocated
   with source files under `src/` or in `/tests/unit/`.
-- E2E tests live under `/tests/e2e/**/*.spec.ts` and run with Playwright.
+  When using `/tests/unit/`, mirror the `src` tree and import targets with the `@/` alias.
+- E2E tests live under `/tests/e2e/**/*.spec.ts` and run with Playwright. Keep E2E specs within `/tests/e2e/`.
 - Before implementing a feature or fix, write (or update) a failing test that captures the desired behavior, make the test pass with the minimal code change, and then refactor for clarity and maintainability.
 - Bug fixes must include regression tests that prove the defect and prevent future regressions.
 - Use clear, behavior-focused descriptions (e.g., `should return 200 on valid request`) and organize suites with
