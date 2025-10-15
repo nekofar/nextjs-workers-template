@@ -1,3 +1,13 @@
+## [1.0.0-alpha.4] - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- *(github)* Group react dependencies in dependabot config
+- *(deps)* Bump actions/checkout from 4.2.2 to 5.0.0 (#4)
+- *(deps)* Bump softprops/action-gh-release from 2.0.5 to 2.4.1 (#5)
+- *(deps)* Bump actions/setup-node from 4.1.0 to 6.0.0 (#6)
+- *(github)* Add wrangler to dependabot config
+- *(github)* Update release workflow for improved automation
 ## [1.0.0-alpha.3] - 2025-10-15
 
 ### 🚀 Features
