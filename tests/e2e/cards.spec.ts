@@ -1,9 +1,9 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Info cards", () => {
-  test("CTAs have safe target and rel", async ({ page }) => {
-    await page.goto("/");
+  test.beforeEach(async ({ page }) => page.goto("/"));
 
+  test("should keep CTAs target and rel safe", async ({ page }) => {
     const links = [
       { name: "Learn more", expectedRel: /noopener/ },
       { name: "View examples", expectedRel: /noopener/ },
@@ -17,9 +17,7 @@ test.describe("Info cards", () => {
     }
   });
 
-  test("CTAs hrefs point to correct domains", async ({ page }) => {
-    await page.goto("/");
-
+  test("should point CTA hrefs to correct domains", async ({ page }) => {
     const entries = [
       { name: "Learn more", contains: "nextjs.org/learn" },
       { name: "View examples", contains: "vercel.com/templates" },
