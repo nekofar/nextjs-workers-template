@@ -1,7 +1,7 @@
 # Next.js Template for Cloudflare Workers
 
 [![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/nekofar/nextjs-workers-template?include_prereleases)](https://github.com/nekofar/nextjs-workers-template/releases)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/nekofar/nextjs-workers-template/build.yml)](https://github.com/nekofar/nextjs-workers-template/actions/workflows/build.yml)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/nekofar/nextjs-workers-template/ci.yml)](https://github.com/nekofar/nextjs-workers-template/actions/workflows/ci.yml)
 [![GitHub](https://img.shields.io/github/license/nekofar/nextjs-workers-template)](https://github.com/nekofar/nextjs-workers-template/blob/master/LICENSE)
 [![X (formerly Twitter) Follow](https://img.shields.io/badge/follow-%40nekofar-ffffff?logo=x&style=flat)](https://x.com/nekofar)
 [![Farcaster (Warpcast) Follow](https://img.shields.io/badge/follow-%40nekofar-855DCD.svg?logo=farcaster&logoColor=f5f5f5&style=flat)](https://warpcast.com/nekofar)
