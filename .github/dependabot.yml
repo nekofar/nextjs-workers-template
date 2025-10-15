@@ -1,0 +1,60 @@
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    # Files stored in repository root
+    directory: "/"
+    # Check for updates every weekday
+    schedule:
+      interval: "daily"
+      time: "00:00"
+      timezone: "UTC"
+    # Add assignees
+    assignees:
+      - "nekofar"
+    # Include a list of updated dependencies
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    # Specify labels for pull requests
+    labels:
+      - "dependencies"
+    # Allow up to 20 open pull requests for dependencies
+    open-pull-requests-limit: 20
+    # Add reviewers
+    reviewers:
+      - "nekofar"
+    # Raise pull requests against the `develop` branch
+    target-branch: "develop"
+
+  # Maintain dependencies for PNPM (npm ecosystem)
+  - package-ecosystem: "npm"
+    # Files stored in the repository root
+    directory: "/"
+    # Check for updates every weekday
+    schedule:
+      interval: "daily"
+      time: "00:00"
+      timezone: "UTC"
+    # Add assignees
+    assignees:
+      - "nekofar"
+    # Add reviewers
+    reviewers:
+      - "nekofar"
+    # Specify labels for pull requests
+    labels:
+      - "dependencies"
+    # Include a list of updated dependencies
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    # Allow up to 10 open pull requests for dependencies
+    open-pull-requests-limit: 20
+    # Raise pull requests against the `develop` branch
+    target-branch: "develop"
+    # List of packages to ignore for specific update types
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
