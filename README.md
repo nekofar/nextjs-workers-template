@@ -40,7 +40,7 @@ pnpm install
 Here's how you can use this template:
 
 - **Building**: Run `pnpm run build` to compile your TypeScript MCP server.
-- **Running Tests**: Execute `pnpm run test` to run tests for your MCP server.
+- **Running Tests**: Execute `pnpm run test` to run the Vitest suite with coverage enforcement (minimum 60% lines/statements/functions and 50% branches). Use `pnpm run test:watch` for local development when you don't need coverage gating.
 - **Linting**: Use `pnpm run lint` to lint your TypeScript code with Biome.
 - **Development**: Run `pnpm run dev` to start the MCP server in development mode.
 - **Inspector**: Run `pnpm run inspector` to launch the MCP Inspector for debugging and testing your server interactively.
