@@ -24,6 +24,9 @@ Repository Guidelines
 - Use Zod for client-side validation and parsing; colocate schemas with the feature or consolidate them under `src/lib/validation`.
 - Lean on Remeda utilities (e.g., `isEqual`, `isNullish`) instead of crafting ad-hoc helpers or using `lodash`.
 - Add shadcn/ui primitives via the generator (`pnpm shadcn add <component>`); never paste copies manually.
+- **Never edit shadcn/ui components** in `src/components/ui` directly. These files are registry-managed and must remain
+  untouched. If you need to modify behavior, wrap the component or extend it in a separate file. If you need an updated
+  version, re-add it using `pnpm shadcn add <component>` to sync with the latest registry definition.
 - Favor semantic Tailwind variants via `clsx` or `tailwind-merge` instead of raw utility strings.
 
 ## Testing Guidelines
