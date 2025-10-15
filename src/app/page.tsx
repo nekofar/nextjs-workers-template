@@ -31,7 +31,9 @@ export default function Home() {
 
         <Card className="w-full max-w-2xl">
           <CardHeader>
-            <CardTitle>Get Started</CardTitle>
+            <CardTitle role="heading" aria-level={2}>
+              Get Started
+            </CardTitle>
             <CardDescription>
               Begin your journey with Next.js and Shadcn UI
             </CardDescription>
