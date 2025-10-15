@@ -1,3 +1,30 @@
+## [1.0.0-alpha.2] - 2025-10-15
+
+### 🚀 Features
+
+- *(utils)* Add `cn` utility for class name merging
+- *(ui)* Add `Button` component with variants and sizes
+- *(ui)* Add `Card` component with subcomponents
+- *(ui)* Add `Badge` component with variants
+- *(app)* Revamp home page layout with new UI components
+- *(styles)* Update global styles with enhanced variables
+- *(app)* Add `DM_Sans` font to layout
+
+### 🎨 Styling
+
+- *(globals)* Enhance theme and color variables
+- *(config)* Enforce semicolons in JavaScript formatting
+- *(app)* Format JSX with consistent indentation
+- *(app)* Reorder font imports for consistency
+- *(app)* Reorder imports for improved readability
+
+### ⚙️ Miscellaneous Tasks
+
+- *(config)* Update file includes in biome config
+- *(config)* Add `lint-staged` configuration
+- *(scripts)* Add `prepare` script for husky setup
+- *(hooks)* Add `pre-commit` hook with `lint-staged`
+- *(config)* Update `lint-staged` export style
 ## [1.0.0-alpha.1] - 2025-10-15
 
 ### ⚙️ Miscellaneous Tasks
