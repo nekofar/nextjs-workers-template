@@ -1,5 +1,6 @@
 import React from "react";
 import { vi } from "vitest";
+import "@testing-library/jest-dom/vitest";
 
 vi.mock("next/image", () => ({
   // Simplify Next.js Image to a native img for tests.
