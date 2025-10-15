@@ -1,6 +1,13 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FileText, Grid3x3, Globe } from "lucide-react";
 
@@ -17,13 +24,17 @@ export default function Home() {
             height={38}
             priority
           />
-          <Badge variant="secondary" className="mt-4">Next.js + Cloudflare Workers</Badge>
+          <Badge variant="secondary" className="mt-4">
+            Next.js + Cloudflare Workers
+          </Badge>
         </div>
 
         <Card className="w-full max-w-2xl">
           <CardHeader>
             <CardTitle>Get Started</CardTitle>
-            <CardDescription>Begin your journey with Next.js and Shadcn UI</CardDescription>
+            <CardDescription>
+              Begin your journey with Next.js and Shadcn UI
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
