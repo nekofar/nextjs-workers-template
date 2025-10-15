@@ -1,3 +1,15 @@
+## [1.0.0-alpha.6] - 2025-10-15
+
+### 🧪 Testing
+
+- Relocate unit specs (#13)
+- *(e2e)* Share home fixture and add onboarding spec (#16)
+
+### ⚙️ Miscellaneous Tasks
+
+- *(github)* Fix workflow indentation issue
+- *(test)* Enforce coverage thresholds (#14)
+- *(ci)* Improve playwright reporting and caching (#15)
 ## [1.0.0-alpha.5] - 2025-10-15
 
 ### ⚙️ Miscellaneous Tasks
