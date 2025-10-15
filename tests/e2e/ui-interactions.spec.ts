@@ -1,11 +1,11 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("UI interactions & accessibility", () => {
-  test('Keyboard activation of "Read our docs" opens popup', async ({
+  test.beforeEach(async ({ page }) => page.goto("/"));
+
+  test("should open docs popup when activated via keyboard", async ({
     page,
   }) => {
-    await page.goto("/");
-
     const link = page.getByRole("link", { name: "Read our docs" });
     await link.focus();
 
@@ -19,9 +19,9 @@ test.describe("UI interactions & accessibility", () => {
     await popup.close();
   });
 
-  test('CTAs use target="_blank" with rel="noopener"', async ({ page }) => {
-    await page.goto("/");
-
+  test("should set CTA target and rel attributes for safety", async ({
+    page,
+  }) => {
     const deploy = page.getByRole("link", { name: "Deploy now" });
     const docs = page.getByRole("link", { name: "Read our docs" });
 
