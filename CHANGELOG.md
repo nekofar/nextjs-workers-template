@@ -1,3 +1,16 @@
+## [1.0.0-alpha.7] - 2025-10-15
+
+### 📚 Documentation
+
+- Expand testing guidelines (#19)
+- Update testing guidelines (#20)
+- Clarify commit guidelines (#22)
+- Clarify unit and e2e test locations (#21)
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* Scope workflow permissions (#17)
+- *(test)* Tighten coverage sources (#18)
 ## [1.0.0-alpha.6] - 2025-10-15
 
 ### 🧪 Testing
