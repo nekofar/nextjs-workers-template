@@ -22,7 +22,7 @@ jobs:
           cache: "pnpm"
           node-version-file: "package.json"
 
-        run: pnpm install --frozen-lockfile
+      - run: pnpm install --frozen-lockfile
 
       - run: |
           NAME="$(basename $GITHUB_REPOSITORY)"
