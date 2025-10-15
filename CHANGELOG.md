@@ -1,3 +1,76 @@
+## [1.0.0-alpha.3] - 2025-10-15
+
+### 🚀 Features
+
+- *(accessibility)* Add `role` and `aria-level` to card titles
+
+### 🐛 Bug Fixes
+
+- *(home)* Make hero title an accessible level-2 heading
+
+### 📚 Documentation
+
+- *(license)* Add Apache 2.0 license
+- *(agents)* Add project guidelines to `AGENTS.md`
+- *(readme)* Add template overview and usage steps
+- *(agents)* Update repository guidelines for clarity
+- *(guidelines)* Refine contributor practices
+- *(agents)* Clarify shadcn/ui component editing guidelines
+- *(testing)* Update testing guidelines for clarity
+
+### 🎨 Styling
+
+- *(config)* Fix indentation in `vitest` configuration
+
+### 🧪 Testing
+
+- Enable jest-dom matchers in Vitest setup
+- Refine next/image mock to strip Next-specific props (e.g., priority)
+- Add page and button component tests to repository
+- *(home)* Tolerate multiple matches in quick links by using getAllBy* queries
+- *(utils)* Add tests for `cn` utility function
+- *(config)* Add Playwright configuration for tests
+- *(playwright)* Enable `baseURL` for test actions
+- *(playwright)* Update test runner configuration
+- *(playwright)* Configure web server for testing
+- *(playwright)* Make `baseURL` configurable via env
+- *(playwright)* Remove `webkit` browser configuration
+- *(scripts)* Add Playwright test commands
+- *(playwright)* Add example spec for external site
+- *(playwright)* Add e2e tests for info card links
+- *(playwright)* Add e2e tests for home page
+- *(playwright)* Add meta spec for document basics
+- *(playwright)* Add e2e tests for UI interactions
+- *(playwright)* Restructure docs smoke tests (#1)
+- *(e2e)* Refactor home page flow (#2)
+- *(e2e)* Share home navigation setup (#3)
+- *(playwright)* Update test directory and matching pattern
+- *(vitest)* Expand `include` pattern for unit tests
+- *(e2e)* Move example tests to `e2e` folder
+
+### ⚙️ Miscellaneous Tasks
+
+- *(config)* Add `.editorconfig` for consistent formatting
+- *(scripts)* Add `test` script for running tests
+- *(config)* Add `vitest` configuration
+- *(scripts)* Update `test` script to pass with no tests
+- *(config)* Add test setup file for `vitest`
+- *(ci)* Skip Biome on ignored src/components/ui files in lint-staged to prevent false failures
+- *(gitignore)* Update ignore rules to include Playwright files
+- *(playwright)* Add GitHub Actions workflow for Playwright tests
+- *(github)* Run playwright on gitflow branches
+- *(github)* Add issue templates for feature requests and bugs
+- *(github)* Remove Playwright workflow
+- *(github)* Add dependabot configuration
+- *(github)* Add funding configuration
+- *(github)* Add stale workflow configuration
+- *(github)* Add CODEOWNERS file
+- *(github)* Add multi-step CI pipeline
+- *(github)* Pin workflow action versions
+- *(github)* Use `pnpm/action-setup` in workflows
+- *(github)* Use `node-version-file` in workflows
+- *(github)* Add Git Flow workflow
+- *(github)* Add template cleanup workflow
 ## [1.0.0-alpha.2] - 2025-10-15
 
 ### 🚀 Features

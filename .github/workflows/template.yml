@@ -1,0 +1,53 @@
+name: Template Cleanup
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: github.repository != 'nekofar/nextjs-workers-template'
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - uses: pnpm/action-setup@v4.2.0
+        with:
+          run_install: false
+      - uses: actions/setup-node@v6
+        with:
+          cache: "pnpm"
+          node-version-file: "package.json"
+
+        run: pnpm install --frozen-lockfile
+
+      - run: |
+          NAME="$(basename $GITHUB_REPOSITORY)"
+          VERSION='1.0.0-alpha.0'
+
+          pnpm dlx json -I -f package.json -e "this.name='${NAME}'"
+          pnpm dlx json -I -f package.json -e "this.version='${VERSION}'"
+          pnpm install --no-frozen-lockfile
+
+          rm -rf \
+            .github/ISSUE_TEMPLATE \
+            .github/workflows/template.yml \
+            .github/dependabot.yml \
+            .github/FUNDING.yml \
+            .github/stale.yml \
+            CHANGELOG.md \
+            README.md
+
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m 'chore: initial template cleanup'
+
+      - uses: ad-m/github-push-action@master
+        with:
+          branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}

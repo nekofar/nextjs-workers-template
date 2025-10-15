@@ -1,0 +1,24 @@
+# This CODEOWNERS file uses GitHub's standard format.
+# Lines match file patterns to owners. Owners can be individual users or teams.
+# The last matching pattern takes precedence. Wildcards are supported.
+# See: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything
+*       @nekofar
+
+# Source code
+/src/**  @nekofar
+
+# Tests
+/tests/**  @nekofar
+
+# GitHub configuration and workflows
+/.github/**  @nekofar
+
+# Documentation and project metadata
+/*.md   @nekofar
+/cliff.toml  @nekofar
+/biome.json  @nekofar
+/tsconfig.json  @nekofar
+/package.json  @nekofar
+/pnpm-lock.yaml  @nekofar

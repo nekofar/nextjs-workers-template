@@ -31,7 +31,9 @@ export default function Home() {
 
         <Card className="w-full max-w-2xl">
           <CardHeader>
-            <CardTitle>Get Started</CardTitle>
+            <CardTitle role="heading" aria-level={2}>
+              Get Started
+            </CardTitle>
             <CardDescription>
               Begin your journey with Next.js and Shadcn UI
             </CardDescription>
@@ -82,7 +84,9 @@ export default function Home() {
           <Card>
             <CardHeader>
               <FileText className="mb-2 h-4 w-4" />
-              <CardTitle className="text-base">Learn</CardTitle>
+              <CardTitle role="heading" aria-level={3} className="text-base">
+                Learn
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription>
@@ -105,7 +109,9 @@ export default function Home() {
           <Card>
             <CardHeader>
               <Grid3x3 className="mb-2 h-4 w-4" />
-              <CardTitle className="text-base">Examples</CardTitle>
+              <CardTitle role="heading" aria-level={3} className="text-base">
+                Examples
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription>
@@ -128,7 +134,9 @@ export default function Home() {
           <Card>
             <CardHeader>
               <Globe className="mb-2 h-4 w-4" />
-              <CardTitle className="text-base">Next.js</CardTitle>
+              <CardTitle role="heading" aria-level={3} className="text-base">
+                Next.js
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription>
