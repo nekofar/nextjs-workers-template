@@ -34,6 +34,8 @@ Repository Guidelines
 - Unit tests use `*.test.ts` (or `*.test.tsx`) naming and run with Vitest + React Testing Library; place them colocated
   with source files under `src/` or in `/tests/unit/`.
 - E2E tests live under `/tests/e2e/**/*.spec.ts` and run with Playwright.
+- Before implementing a feature or fix, write (or update) a failing test that captures the desired behavior, make the test pass with the minimal code change, and then refactor for clarity and maintainability.
+- Bug fixes must include regression tests that prove the defect and prevent future regressions.
 - Use clear, behavior-focused descriptions (e.g., `should return 200 on valid request`) and organize suites with
   `describe`/`it` blocks following the Arrange–Act–Assert pattern.
 - Keep comments minimal and only when they clarify non-obvious logic.
