@@ -1,3 +1,8 @@
+## [1.0.0-alpha.9] - 2025-10-20
+
+### ⚙️ Miscellaneous Tasks
+
+- Restrict release job to version tags (#24)
 ## [1.0.0-alpha.8] - 2025-10-15
 
 ### 📚 Documentation
