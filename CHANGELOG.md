@@ -1,3 +1,8 @@
+## [1.0.0-alpha.11] - 2025-10-23
+
+### ⚙️ Miscellaneous Tasks
+
+- *(config)* Bump biome schema reference
 ## [1.0.0-alpha.10] - 2025-10-22
 
 ### 🐛 Bug Fixes
