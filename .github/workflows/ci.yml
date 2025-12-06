@@ -169,7 +169,7 @@ jobs:
 
 
       - name: Create the release
-        uses: nekofar/create-github-release@v1.0.14
+        uses: nekofar/create-github-release@v1.0.15
         with:
           tag: v${{ steps.release.outputs.version }}
           title: v${{ steps.release.outputs.version }}
