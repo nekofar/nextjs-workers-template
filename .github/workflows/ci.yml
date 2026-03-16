@@ -26,7 +26,7 @@ jobs:
     name: Lint
     steps:
       - uses: actions/checkout@v6.0.1
-      - uses: pnpm/action-setup@v4.2.0
+      - uses: pnpm/action-setup@v4.4.0
         with:
           run_install: false
       - uses: actions/setup-node@v6.1.0
@@ -46,7 +46,7 @@ jobs:
     name: Build
     steps:
       - uses: actions/checkout@v6.0.1
-      - uses: pnpm/action-setup@v4.2.0
+      - uses: pnpm/action-setup@v4.4.0
         with:
           run_install: false
       - uses: actions/setup-node@v6.1.0
@@ -72,7 +72,7 @@ jobs:
           - playwright
     steps:
       - uses: actions/checkout@v6.0.1
-      - uses: pnpm/action-setup@v4.2.0
+      - uses: pnpm/action-setup@v4.4.0
         with:
           run_install: false
       - uses: actions/setup-node@v6.1.0
